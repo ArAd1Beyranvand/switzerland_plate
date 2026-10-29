@@ -34,6 +34,9 @@ const List<String> switzerlandCantons = <String>[
 
 bool _isPlain(String s) => isDigits(s) && !s.startsWith('0');
 
+// TODO(py): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
+// TODO(ts): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
+// TODO(kt): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
 /// Judges a canton-and-number plate (`SwitzerlandPlates.high`, `long`,
 /// `front`, `dealer`, `temporary`, `customs`, `motorcycle`, `scooter`).
 /// Reports, never bars a keystroke; gated on the number.

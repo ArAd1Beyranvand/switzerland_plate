@@ -4,6 +4,9 @@
 /// with an advisory validator.
 library;
 
+// TODO(py): [D5] one module `plates.countries.switzerland`; assets via importlib.resources.
+// TODO(ts): [D5] one subpath export `./countries/switzerland`; tree-shakable.
+// TODO(kt): [D5] package `countries.switzerland` in the countries module.
 export 'package:plate_alphabet/plate_alphabet.dart' show SwitzerlandAlphabets;
 
 export 'src/switzerland_colors.dart';

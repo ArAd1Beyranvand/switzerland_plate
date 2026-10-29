@@ -152,6 +152,9 @@ class _Frame {
   }
 
   PlateDecal shield(List<double> r) => PlateDecal(
+    // TODO(py): [H2][D6] ImageProvider: reference the raster as package + path; importlib.resources.
+    // TODO(ts): [H2][D6] ImageProvider: reference the raster as package + path; import as asset URL.
+    // TODO(kt): [H2][D6] ImageProvider: reference the raster as package + path; Res/compose resources.
     image: const AssetImage(
       'assets/icons/swiss_shield.png',
       package: 'switzerland_plate',
