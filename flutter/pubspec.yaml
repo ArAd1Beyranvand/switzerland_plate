@@ -1,7 +1,7 @@
 name: switzerland_plate
 description: "Switzerland's licence plates for the plate_core library: high, long, front, small and diplomatic formats in the federal colours, with an advisory validator."
 version: 0.1.0
-repository: https://github.com/ArAd1Beyranvand/switzerland_plate
+repository: https://github.com/ArAd1Beyranvand/switzerland_plate/tree/main/flutter
 resolution: workspace
 
 environment:
