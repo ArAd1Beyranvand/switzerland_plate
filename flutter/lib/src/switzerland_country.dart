@@ -7,7 +7,6 @@ import 'switzerland_colors.dart';
 abstract final class SwitzerlandCountry {
   static const PlateCountry switzerland = PlateCountry(
     code: 'ch',
-    captionLines: <String>[],
     panelColor: SwitzerlandColors.white,
     panelTextColor: SwitzerlandColors.black,
   );

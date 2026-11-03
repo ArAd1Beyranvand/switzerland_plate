@@ -34,9 +34,6 @@ const List<String> switzerlandCantons = <String>[
 
 bool _isPlain(String s) => isDigits(s) && !s.startsWith('0');
 
-// TODO(py): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
-// TODO(ts): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
-// TODO(kt): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
 /// Judges a canton-and-number plate (`SwitzerlandPlates.high`, `long`,
 /// `front`, `dealer`, `temporary`, `customs`, `motorcycle`, `scooter`).
 /// Reports, never bars a keystroke; gated on the number.
@@ -45,13 +42,10 @@ bool _isPlain(String s) => isDigits(s) && !s.startsWith('0');
 /// open with a lone `M`), and the number is digits with no leading zero, at
 /// most as long as the number slot. The registry also issues no number 0.
 class SwitzerlandValidator extends GatedPlateValidator {
-  const SwitzerlandValidator({this.military = false});
+  const SwitzerlandValidator({this.military = false}) : super('number');
 
   /// Whether a lone `M` is a legal canton field.
   final bool military;
-
-  @override
-  String get gateGroup => 'number';
 
   static const String reasonCanton = 'The canton is a Swiss canton code.';
   static const String reasonNumber =
@@ -76,10 +70,7 @@ class SwitzerlandValidator extends GatedPlateValidator {
 /// its own account as well, so it holds even against a spec built without
 /// [SwitzerlandMissions.restriction].
 class SwitzerlandDiplomaticValidator extends GatedPlateValidator {
-  const SwitzerlandDiplomaticValidator();
-
-  @override
-  String get gateGroup => 'code';
+  const SwitzerlandDiplomaticValidator() : super('code');
 
   static const String reasonSerial = 'The serial is one to three digits.';
   static const String reasonCode = 'The code is one to three digits.';

@@ -6,13 +6,24 @@ GO VEGAN 🌱
 
 From the mighty people of Iran to the people of Switzerland to view examples:
 
-https://platexample.ir/#/discover/switzerland
+https://platexample.ir/#/discover/switzerland:flutter
 
 # switzerland_plate
 
-Switzerland's licence plates for the `plate_core` library. High, long, front, small and diplomatic formats in the federal colours, with an advisory validator.
+Switzerland's licence plates for the plate_core library: high, long, front, small and diplomatic formats in the federal colours, with an advisory validator.
 
-## Install
+## Languages
+
+| Language | Folder | Example |
+| --- | --- | --- |
+| Flutter / Dart | [`flutter/`](https://github.com/ArAd1Beyranvand/switzerland_plate/tree/main/flutter) | [platexample](https://platexample.ir/#/discover/switzerland:flutter) |
+| Kotlin | [`kotlin/`](https://github.com/ArAd1Beyranvand/switzerland_plate/tree/main/kotlin) | [platexample](https://platexample.ir/#/discover/switzerland:kotlin) |
+| Python | [`python/`](https://github.com/ArAd1Beyranvand/switzerland_plate/tree/main/python) | [platexample](https://platexample.ir/#/discover/switzerland:python) |
+| TypeScript | [`typescript/`](https://github.com/ArAd1Beyranvand/switzerland_plate/tree/main/typescript) | [platexample](https://platexample.ir/#/discover/switzerland:typescript) |
+
+## Quick start
+
+### Install
 
 ```yaml
 dependencies:
@@ -20,7 +31,7 @@ dependencies:
   switzerland_plate: ^0.1.0
 ```
 
-## Use
+### Use
 
 ```dart
 import 'package:plate_core/plate_core.dart';
@@ -35,17 +46,43 @@ PlateCanvas(
 );
 ```
 
-## Contains
+## Specs
 
-- `SwitzerlandCountry` — country panel: `switzerland`.
-- `SwitzerlandPlates` — 11 plate specs: `high`, `dealer`, `temporary`, `long`, `military`, `front`, `customs`, `motorcycle`, `scooter`, `diplomatic`, `consular`.
-- `SwitzerlandThemes` — 8 themes: `standard`, `utility`, `exceptional`, `agricultural`, `scooter`, `red`, `military`, `diplomatic`.
-- `SwitzerlandValidator` — advisory validator; flags the frame, never blocks a keystroke.
-- `SwitzerlandDiplomaticValidator` — advisory validator; flags the frame, never blocks a keystroke.
-- `SwitzerlandSerialGenerator` — random plate generator.
+Each spec is one plate layout.
+
+- `SwitzerlandPlates.high`
+- `SwitzerlandPlates.dealer`
+- `SwitzerlandPlates.temporary`
+- `SwitzerlandPlates.long`
+- `SwitzerlandPlates.military`
+- `SwitzerlandPlates.front`
+- `SwitzerlandPlates.customs`
+- `SwitzerlandPlates.motorcycle`
+- `SwitzerlandPlates.scooter`
+- `SwitzerlandPlates.diplomatic`
+- `SwitzerlandPlates.consular`
+
+## Themes
+
+- `SwitzerlandThemes.standard`
+- `SwitzerlandThemes.utility`
+- `SwitzerlandThemes.exceptional`
+- `SwitzerlandThemes.agricultural`
+- `SwitzerlandThemes.scooter`
+- `SwitzerlandThemes.red`
+- `SwitzerlandThemes.military`
+- `SwitzerlandThemes.diplomatic`
+
+## Change it
+
+`PlateCanvas` takes `spec:` (an entry of `SwitzerlandPlates`) and `theme:` (an entry of `SwitzerlandThemes`). Set `validator:` to `SwitzerlandValidator()` and `autoValidate: true` to show validation hints.
+
+## Also included
+
+- `SwitzerlandCountry` — the country panel.
+- `SwitzerlandValidator` — the plate validator.
 - `SwitzerlandMissions` — code table.
 - `SwitzerlandRegions` — code table.
-- 1 bundled asset (`swiss_shield.png`).
 
 ## Plates
 
@@ -74,3 +111,6 @@ PTT/SBB (`P`) plates, the `AT` diplomatic prefix (no picture), and the
 
 Painted by [`plate_core`](https://pub.dev/packages/plate_core); alphabets shared through [`plate_alphabet`](https://pub.dev/packages/plate_alphabet); optional character picker in [`plate_keypad`](https://pub.dev/packages/plate_keypad).
 
+## License
+
+See [LICENSE](https://github.com/ArAd1Beyranvand/switzerland_plate/blob/main/LICENSE).

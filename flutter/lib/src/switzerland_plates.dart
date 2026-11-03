@@ -32,9 +32,7 @@ import 'switzerland_regions.dart';
 /// not drawn: they are a different art for each canton and none was
 /// obtainable. The shield is drawn by hand.
 abstract final class _Layout {
-  static const double flatWidth = 520;
-  static const double flatHeight = 256;
-  static const double inkRatio = 0.55;
+  static const double flatWidth = 520, flatHeight = 256, inkRatio = 0.55;
   static const double glyphRatio = 0.72;
 
   static const double highWidth = 480, highHeight = 256;
@@ -152,9 +150,6 @@ class _Frame {
   }
 
   PlateDecal shield(List<double> r) => PlateDecal(
-    // TODO(py): [H2][D6] ImageProvider: reference the raster as package + path; importlib.resources.
-    // TODO(ts): [H2][D6] ImageProvider: reference the raster as package + path; import as asset URL.
-    // TODO(kt): [H2][D6] ImageProvider: reference the raster as package + path; Res/compose resources.
     image: const AssetImage(
       'assets/icons/swiss_shield.png',
       package: 'switzerland_plate',
@@ -184,12 +179,9 @@ class _Frame {
 /// PTT/SBB (`P`) plates, the `AT` diplomatic prefix (no picture), and the
 /// 3 + 3 digit gap of the red plate.
 abstract final class SwitzerlandPlates {
-  static const String cantonKey = 'canton';
-  static const String numberKey = 'number';
-  static const String markKey = 'mark';
-  static const String stickerKey = 'sticker';
-  static const String prefixKey = 'prefix';
-  static const String serialKey = 'serial';
+  static const String cantonKey = 'canton', numberKey = 'number';
+  static const String markKey = 'mark', stickerKey = 'sticker';
+  static const String prefixKey = 'prefix', serialKey = 'serial';
   static const String codeKey = 'code';
 
   static PlateSpec _spec(
@@ -211,10 +203,7 @@ abstract final class SwitzerlandPlates {
     panel: PlatePanel(box: PlateBox(0, 0, 0, f.height)),
     background: background,
     slots: slots,
-    textGroups: <PlateTextGroup>[
-      for (int i = 0; i < keys.length; i++)
-        PlateTextGroup(<int>[i], key: keys[i]),
-    ],
+    textGroups: PlateTextGroup.perSlot(keys),
     decals: decals,
     labels: labels,
     bands: bands,
